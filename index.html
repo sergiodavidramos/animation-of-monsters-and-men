@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Of Monsters And Men</title>
+</head>
+
+<body>
+    <button class="button-audio muted" id="button-audio" title="Muted"></button>
+    <div id="audio-signal">
+        <p class="active-audio"><span>Activa la música</span></p>
+        <p class="copy">Si la letra no se sincroniza,<br> recarga el navegador</p>
+    </div>
+    <audio id="music" controls src="./mp3/OfMonstersandMen-IOfTheStorm.mp3"></audio>
+    <script>
+        let counter = 0
+        const timer = setInterval(() => {
+            counter += 1
+        }, 200)
+        const music = document.getElementById('music')
+        const buttonMute = document.getElementById('button-audio')
+        const signal = document.getElementById('audio-signal')
+        const activeAudio = () => {
+            music.play()
+            music.currentTime = counter / 5
+            clearInterval(timer)
+            document.body.removeChild(signal)
+        }
+        buttonMute.addEventListener('click', () => {
+            if (music.currentTime === 0) activeAudio()
+            else music.muted = !music.muted
+            buttonMute.classList[music.muted ? 'add' : 'remove']('muted')
+        })
+        signal.addEventListener('click', () => {
+            activeAudio()
+            buttonMute.classList.remove('muted')
+        })
+    </script>
+    <button class="button-full" id="button-full" title="Full screen"></button>
+    <script>
+        const buttonFullScreen = document.getElementById('button-full')
+        buttonFullScreen.addEventListener('click', () => {
+            const isActive = document.fullscreenElement
+            if (isActive) document.exitFullscreen()
+            else document.documentElement.requestFullscreen()
+            buttonFullScreen.classList[!isActive ? 'add' : 'remove']('full')
+        }) 
+    </script>
+    <div class="end">
+        <p class="title">Creado por Sergio David Ramos</p>
+    </div>
+    <main>
+        <div class="cloud">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        <div class="cloud">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        <div class="main-planet">
+            <div class="rocks">
+                <div class="rock"></div>
+                <div class="rock"></div>
+            </div>
+            <div class="rocks">
+                <div class="rock"></div>
+                <div class="rock"></div>
+            </div>
+            <div class="rocks">
+                <div class="rock"></div>
+                <div class="rock"></div>
+            </div>
+            <div class="grasses">
+                <div class="grass"></div>
+                <div class="grass"></div>
+            </div>
+            <div class="house">
+                <div class="front">
+                    <div class="door"></div>
+                    <div class="window"></div>
+                </div>
+                <div class="side">
+                    <div class="window"></div>
+                    <div class="window"> </div>
+                </div>
+                <div class="roof"></div>
+                <div class="roof"></div>
+                <div class="chimney"></div>
+            </div>
+            <div class="trees">
+                <div class="triangle-pine">
+                    <div class="foliage"></div>
+                    <div class="trunk"></div>
+                </div>
+                <div class="pointy-pine">
+                    <div class="foliage"></div>
+                    <div class="trunk"></div>
+                </div>
+                <div class="round-pine">
+                    <div class="foliage"></div>
+                    <div class="trunk"></div>
+                </div>
+                <div class="pointy-pine">
+                    <div class="foliage"></div>
+                    <div class="trunk"></div>
+                </div>
+                <div class="triangle-pine">
+                    <div class="foliage"></div>
+                    <div class="trunk"></div>
+                </div>
+            </div>
+            <div class="bush">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="flowers">
+                <div class="flower">
+                    <div class="petals">
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                    </div>
+                    <div class="petals">
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                    </div>
+                    <div class="stigma"></div>
+                    <div class="leafs">
+                        <div class="leaf"></div>
+                        <div class="leaf"></div>
+                    </div>
+                </div>
+                <div class="flower">
+                    <div class="petals">
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                    </div>
+                    <div class="petals">
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                    </div>
+                    <div class="stigma"></div>
+                    <div class="leafs">
+                        <div class="leaf"></div>
+                        <div class="leaf"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="planet"></div>
+        </div>
+        <div class="mountains">
+            <div class="mountain first"></div>
+            <div class="mountains first">
+                <div class="mountain second"></div>
+                <div class="mountain third"></div>
+                <div class="mountain fourth"></div>
+            </div>
+            <div class="mountains second">
+                <div class="mountain fifth"></div>
+                <div class="mountain sixth"></div>
+                <div class="mountain seventh"></div>
+            </div>
+            <div class="mountain eighth"></div>
+        </div>
+        <div class="planets">
+            <div class="orbiting-planet yellow">
+                <div class="ring"></div>
+            </div>
+            <div class="orbiting-planet blue">
+            </div>
+            <div class="orbiting-planet red">
+            </div>
+        </div>
+        <div class="meteors">
+            <div class="meteor first">
+                <div class="nucleus"></div>
+                <div class="tail">
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                </div>
+            </div>
+            <div class="meteor second">
+                <div class="nucleus"></div>
+                <div class="tail">
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                </div>
+            </div>
+            <div class="meteor third">
+                <div class="nucleus"></div>
+                <div class="tail">
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                    <div class="powder"></div>
+                </div>
+            </div>
+        </div>
+        <div class="moon">
+            <div class="crater"></div>
+            <div class="crater"></div>
+            <div class="crater"></div>
+            <div class="crater"></div>
+            <div class="crater"></div>
+            <div class="crater"></div>
+            <div class="crater"></div>
+            <div class="crater"></div>
+            <div class="moon-spot"></div>
+            <div class="moon-spot"></div>
+            <div class="moon-spot"></div>
+        </div>
+        <div class="mars">
+            <div class="crater"></div>
+            <div class="crater"></div>
+            <div class="crater"></div>
+            <div class="crater"></div>
+            <div class="crater"></div>
+            <div class="crater"></div>
+            <div class="crater"></div>
+            <div class="crater"></div>
+            <div class="crater"></div>
+            <div class="crater"></div>
+        </div>
+        <div class="earth">
+            <div class="earth-container">
+                <div class="planet shadow">
+                    <div class="country america"></div>
+                    <div class="country africa"></div>
+                    <div class="country europe"></div>
+                    <div class="country antarctica"></div>
+                    <div class="country greenland"></div>
+                </div>
+                <div class="planet ">
+                    <div class="country america"></div>
+                    <div class="country africa"></div>
+                    <div class="country europe"></div>
+                    <div class="country antarctica"></div>
+                    <div class="country greenland"></div>
+                </div>
+                <div class="clouds">
+                    <div class="cloud-planet">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="cloud-planet">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="cloud-planet">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="cloud-planet">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="multiple-stars">
+            <div class="star first">
+                <div class="center"></div>
+                <div class="light long"></div>
+                <div class="light long"></div>
+                <div class="light short"></div>
+                <div class="light short"></div>
+            </div>
+            <div class="star second">
+                <div class="center"></div>
+                <div class="light long"></div>
+                <div class="light long"></div>
+                <div class="light short"></div>
+                <div class="light short"></div>
+            </div>
+            <div class="star third">
+                <div class="center"></div>
+                <div class="light long"></div>
+                <div class="light long"></div>
+                <div class="light short"></div>
+                <div class="light short"></div>
+            </div>
+            <div class="star fourth">
+                <div class="center"></div>
+                <div class="light long"></div>
+                <div class="light long"></div>
+                <div class="light short"></div>
+                <div class="light short"></div>
+            </div>
+            <div class="star fifth">
+                <div class="center"></div>
+                <div class="light long"></div>
+                <div class="light long"></div>
+                <div class="light short"></div>
+                <div class="light short"></div>
+            </div>
+        </div>
+        <div class="text-container">
+            <div class="intro">
+                <p class="name">Of Monsters and Men</p>
+                <P class="title">I of the storm</P>
+            </div>
+            <div class="first text">
+                <p class="placeholder">Si pudiera enfrentarlos</p>
+                <p class="p">Si pudiera enfrentarlos</p>
+            </div>
+            <div class="second text">
+                <p class="placeholder">Si pudiera hacer arreglos con toda mi oscuridad</p>
+                <p class="p">Si pudiera hacer arreglos con toda mi oscuridad</p>
+            </div>
+
+            <div class="third text">
+                <p class="placeholder">Inclinaria mi cabeza y le daria la bienvenida</p>
+                <p class="p">Inclinaria mi cabeza y le daria la bienvenida</p>
+            </div>
+            <div class="fourth text">
+                <p class="placeholder">Pero siento que quema</p>
+                <p class="p">Pero siento que quema</p>
+            </div>
+            <div class="fifth text">
+                <p class="placeholder">Como cuando el viento del invierno</p>
+                <p class="p">Como cuando el viento del invierno</p>
+            </div>
+            <div class="sixth text">
+                <p class="placeholder">Detiene mi respiración</p>
+                <p class="p">Detiene mi respiración</p>
+            </div>
+            <div class="seventh text">
+                <p class="placeholder">¿Realmente vas a amarme cuando me haya ido?</p>
+                <p class="p">¿Realmente vas a amarme cuando me haya ido?</p>
+            </div>
+            <div class="eighth text">
+                <p class="placeholder">Me temo que no lo harás</p>
+                <p class="p">Me temo que no</p>
+            </div>
+            <div class="ninth text">
+                <p class="placeholder">Me temo que no.</p>
+                <p class="p">Me temo que no.</p>
+            </div>
+            <div class="tenth text">
+                <p class="placeholder">Y resuena eco cuando respiro</p>
+                <p class="p">Y resuena eco cuando respiro</p>
+            </div>
+            <div class="eleventh text">
+                <p class="placeholder">Hasta que todo lo que ves, es mi fantasma</p>
+                <p class="p">Hasta que todo lo que ves, es mi fantasma</p>
+            </div>
+
+            <div class="twelfth text">
+                <p class="placeholder">Vasija vacia, diente torcido</p>
+                <p class="p">Vasija vacia, diente torcido</p>
+            </div>
+            <div class="thirteenth text">
+                <p class="placeholder">Desearía que pudieras ver</p>
+                <p class="p">Desearía que pudieras ver</p>
+            </div>
+
+            <div class="fourteenth text">
+                <p class="placeholder">Y me llaman debajo</p>
+                <p class="p">Y me llaman debajo</p>
+            </div>
+
+            <div class="fifteenth text">
+                <p class="placeholder">Y me estremezco como una hoja</p>
+                <p class="p">Y me estremezco como una hoja</p>
+            </div>
+            <div class="sixteenth text">
+                <p class="placeholder">Soy un extraño</p>
+                <p class="p">Soy un extraño</p>
+            </div>
+            <div class="seventeenth text">
+                <p class="placeholder">Soy un alien dentro de una estructura</p>
+                <p class="p">Soy un alien dentro de una estructura</p>
+            </div>
+            <div class="eighteenth text">
+                <p class="placeholder">¿Realmente vas a amarme cuando me vaya?</p>
+                <p class="p">¿Realmente vas a amarme cuando me vaya?</p>
+            </div>
+
+            <div class="nineteenth text">
+                <p class="placeholder">Con todos mis pensamientos</p>
+                <p class="p">Con todos mis pensamientos</p>
+            </div>
+
+            <div class="twelfth-zero text">
+                <p class="placeholder">Y todos mis defectos</p>
+                <p class="p">Y todas mis defectos</p>
+
+            </div>
+            <div class="twelfth-first text">
+                <p class="placeholder">Siento que muerde</p>
+                <p class="p">Siento que muerde</p>
+            </div>
+            <div class="twelfth-second text">
+                <p class="placeholder">Siento que destroza mi piel, muy indeseable</p>
+                <p class="p">Siento que destroza mi piel, muy indeseable</p>
+            </div>
+            <div class="twelfth-third text">
+                <p class="placeholder">Realmente vas a amarme cuando me haya ido?</p>
+                <p class="p">Realmente vas a amarme cuando me haya ido?</p>
+            </div>
+            <div class="twelfth-fourth text">
+                <p class="placeholder">Me temo que no lo harás</p>
+                <p class="p">Me temo que no lo harás</p>
+            </div>
+            <div class="twelfth-fifth text">
+                <p class="placeholder">Siento que no lo harás</p>
+                <p class="p">Me temo que no.</p>
+            </div>
+            <div class="twelfth-sixth text">
+                <p class="placeholder">Y resuena eco cuando respiro</p>
+                <p class="p">Y resuena eco cuando respiro</p>
+            </div>
+
+
+
+            <div class="twenty-seven text">
+                <p class="placeholder">Hasta que todo lo que ves es mi fantasma</p>
+                <p class="p">Hasta que todo lo que ves es mi fantasma</p>
+            </div>
+            <div class="twenty-eight text">
+                <p class="placeholder">Vasija vacia, diente torcido</p>
+                <p class="p">Vasija vacia, diente torcido</p>
+            </div>
+            <div class="twenty-nine text">
+                <p class="placeholder">Desearía que pudieras ver</p>
+                <p class="p">Desearía que pudieras ver</p>
+            </div>
+            <div class="thirty text">
+                <p class="placeholder">Y me llaman debajo</p>
+                <p class="p">Y me llaman debajo</p>
+            </div>
+            <div class="thirty-one text">
+                <p class="placeholder">Y yo me estremezco como una hoja</p>
+                <p class="p">Y yo me estremezco como una hoja</p>
+            </div>
+            <div class="thirty-two text">
+                <p class="placeholder">Y me llaman debajo</p>
+                <p class="p">Y me llaman debajo</p>
+            </div>
+            <div class="Thirty-three text">
+                <p class="placeholder">Y yo me marchito por debajo</p>
+                <p class="p">Y yo me marchito por debajo</p>
+            </div>
+            <div class="thirty-four text">
+                <p class="placeholder">En la tormenta</p>
+                <p class="p">En la tormenta</p>
+            </div>
+            <div class="thirty-five text">
+                <p class="placeholder">Y me llaman debajo</p>
+                <p class="p">Y me llaman debajo</p>
+            </div>
+            <div class="thirty-six text">
+                <p class="placeholder">Y me estremezco como una hoja</p>
+                <p class="p">Y me estremezco como una hoja</p>
+            </div>
+            <div class="thirty-seven text">
+                <p class="placeholder">Y me llaman de abajo</p>
+                <p class="p">Y me llaman de abajo</p>
+            </div>
+            <div class="thirty-eight text">
+                <p class="placeholder">A esta tormenta</p>
+                <p class="p">A esta tormenta</p>
+            </div>
+       
+        </div>
+        <div class="stars first"></div>
+        <div class="stars second"></div>
+    </main>
+</body>
+
+</html>

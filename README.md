@@ -1,0 +1,1 @@
+animación receptiva solo con css de un video musical que me gusta. Sin SVG, sin imágenes, sin js. Puede verlo completo desde cualquier lugar en el dispositivo.🎼
